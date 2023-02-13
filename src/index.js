@@ -1,17 +1,42 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom/client";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+import "./App.css";
+
+
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import ErrorPage from "./Component/error";
+import SginUp from "./Component/SginUp";
+import SginIN from "./Component/SginIN";
+import Do from "./Component/Do";
+
+
+//#3
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element : <SginUp />,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: "/in",
+    element: <SginIN />,
+  },
+  {
+    path: "/do",
+    element: <Do />,
+  },
+]);
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+  <div>
+  {console.log("test")}
+  <RouterProvider router={router} />
+  </div>
+  );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+//#2 inside root
+/*  <React.StrictMode>
+<RouterProvider router={router} />
+</React.StrictMode> */

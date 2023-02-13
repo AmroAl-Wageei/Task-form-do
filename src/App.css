@@ -1,38 +1,377 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.register form {
+  margin: 5%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+.register form input {
+  margin: 15px 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+.container {
+  padding: 16px;
+  background-color: white;
+}
+
+.do input[type="text"] {
+  width: 20%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #383737;
+  align-items: center;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="email"]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+
+.registerbtn {
+  background-color: #04aa6d;
   color: white;
+  padding: 16px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
 }
 
-.App-link {
-  color: #61dafb;
+.loginbtn {
+  background-color: #31473f;
+  color: white;
+  padding: 16px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+.registerbtn:hover,
+.loginbtn:hover {
+  opacity: 1;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+a {
+  color: dodgerblue;
+}
+
+.signin {
+  background-color: #f1f1f1;
+  text-align: center;
+}
+.error {
+  color: red;
+  font-size: 11px;
+  margin-top: 0;
+}
+
+/* ########################################################## */
+
+/* =============
+ table of contents
+===============
+
+0. global styles
+1. ul class .flex
+      1.1 sub HTML + css + JavaScript
+      1.2 sub sub of CSS
+
+
+2. main & footer
+3. header of mobile
+ 
+*/
+
+/* ===============
+   0. global style
+================ */
+
+* {
+  margin: 0;
+  padding: 0;
+  color: white;
+
+  font-family: sans-serif;
+
+  text-decoration: none;
+  list-style: none;
+
+  letter-spacing: 1px;
+}
+
+html {
+  box-sizing: border-box;
+  background-color: #f2f2f2;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+header {
+  background-color: #1b1b1b;
+}
+
+h1 {
+  padding: 20px;
+  font-size: 25px;
+}
+
+/* ===============
+   1.  ul class .flex
+================ */
+
+.hide-when-mobile {
+  display: flex;
+  justify-content: space-around;
+}
+
+.flex {
+  display: flex;
+}
+
+.main-list {
+  padding: 20px;
+  font-size: 19px;
+  position: relative;
+}
+
+.main-link {
+  padding: 8px 15px;
+}
+
+.main-link:hover,
+.main-link.active {
+  color: cyan;
+  box-shadow: 0 0 5px cyan;
+  border-radius: 5px;
+}
+
+/* .main-link.active {
+  background-color: rgb(22, 79, 60);
+} */
+
+/* =======================================
+   1.1 sub HTML + css + JavaScript
+======================================== */
+
+.sub-ul {
+  display: none;
+
+  position: absolute;
+  top: 69px;
+  left: -15px;
+  border-top: 1px solid cyan;
+
+  background-color: #1b1b1b;
+
+  border-radius: 5px;
+  padding: 5px;
+
+  width: 155px;
+}
+
+.sub-of-js {
+  left: 10px;
+}
+
+.sub-ul li {
+  padding: 8px 0;
+  font-size: 17px;
+  border-bottom: 1px solid black;
+}
+
+.sub-ul li a:hover {
+  color: cyan;
+  font-weight: bold;
+}
+
+.main-list:hover .sub-ul {
+  display: block;
+}
+
+/* =======================================
+   1.2 sub sub of CSS
+======================================== */
+
+.sub-sub-ul {
+  position: absolute;
+  top: 80px;
+  left: 153px;
+
+  border-top: 1px solid cyan;
+
+  background-color: #1b1b1b;
+
+  border-radius: 5px;
+  padding: 5px;
+
+  width: 150px;
+
+  display: none;
+}
+
+.mini-projects:hover .sub-sub-ul {
+  display: block;
+}
+
+/* ==================
+    2. main & footer
+===================== */
+main {
+  color: #1b1b1b;
+
+  height: calc(100vh - 128.64px);
+
+  font-size: 30px;
+  font-weight: bold;
+  line-height: 50px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+}
+
+footer {
+  background-color: #1b1b1b;
+
+  padding: 20px 0;
+  text-align: center;
+  font-size: 18px;
+}
+
+/* ==================
+    3. header of mobile
+===================== */
+.show-when-mobile {
+  display: none;
+}
+
+/* ############################################## */
+
+/* ==============================
+     Animation for bigger screen
+=============================== */
+
+@keyframes down {
+  0% {
+    transform: translateY(-100px);
   }
-  to {
-    transform: rotate(360deg);
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+header {
+  animation: down 1s 1;
+}
+
+h1 {
+  animation: ltr 2s 1;
+}
+form {
+  animation: ltr 2s 1;
+}
+
+@keyframes ltr {
+  0% {
+    transform: translateX(-100px);
+    color: cyan;
+  }
+
+  50% {
+    transform: translateX(150px);
+  }
+
+  70% {
+    transform: translateX(-150px);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.sub-ul,
+.sub-sub-ul {
+  animation: hoverrr 1s 1;
+}
+
+@keyframes hoverrr {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+span {
+  animation: heart 2s infinite linear;
+}
+
+@keyframes heart {
+  0%,
+  100% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+/* ==============================
+   Animation for mobile
+=============================== */
+
+.show-on-click,
+.sub-div,
+.sub-sub-div {
+  animation: move 1s 1;
+}
+
+@keyframes move {
+  0% {
+    transform: translateX(100px);
+  }
+
+  50% {
+    transform: translateX(-100px);
+  }
+
+  100% {
+    transform: translateX(0);
   }
 }
